@@ -1,38 +1,97 @@
-.App {
-  text-align: center;
+/* Styles Import */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+/* Genral */
+*{
+    box-sizing: border-box;
+}
+body {
+    background-color:black;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Home Page */
+.homeContainer{
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.homeImage{
+    width: 100%;
+    border-radius: 20px;
+}
+.homeContent{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.homeDetail{
+    text-align: justify;
+    text-justify: inter-word;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Launches Page */
+.launchesContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+.launchesGrid{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card {
+    margin: 2% 2% !important;
+    justify-content: center;
+    align-items: center;
+}
+.launchesCard{
+    background: linear-gradient(45deg, #fe6b8b8c 30%, #ff8f538a 90%);
+}
+.succeeded {
+    border-bottom: 10px solid green;
+}
+.failed {
+    border-bottom: 10px solid red;
+}
+.upComming {
+    border-bottom: 10px solid rgb(255, 255, 255);
+}
+.launchesImage{
+    width: 100%;
+    align-self: center;
+    border-radius: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* ErrorPage */
+.errorPage {
+    color: white;
+    margin: auto;
+    height: 75vh;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-
-.App-link {
-  color: #61dafb;
+.err404 {
+    color: #ffffff;
+    font-size: 8rem;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.errorMsg {
+    text-align: center;
+    font-size: 1.2rem;
+    left: 16%;
+    top: 45%;
+    width: 75%;
+}
+.errorMsg strong{
+    color: green;
 }
