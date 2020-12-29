@@ -743,7 +743,7 @@ export type LaunchesQuery = (
   { __typename?: 'Query' }
   & { launches?: Maybe<Array<Maybe<(
     { __typename?: 'Launch' }
-    & Pick<Launch, 'flight_number' | 'mission_name' | 'launch_success' | 'launch_year'>
+    & Pick<Launch, 'flight_number' | 'mission_name' | 'launch_success' | 'launch_year' | 'upcoming'>
     & { links?: Maybe<(
       { __typename?: 'LaunchLinks' }
       & Pick<LaunchLinks, 'flickr_images'>
@@ -762,6 +762,7 @@ export const LaunchesDocument = gql`
     links {
       flickr_images
     }
+    upcoming
   }
 }
     `;

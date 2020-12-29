@@ -10,6 +10,7 @@ export const QUERY_LAUNCH = gql`
         links{
             flickr_images
         }
+        upcoming
     }
 }
 `;
