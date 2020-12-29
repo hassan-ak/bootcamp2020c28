@@ -746,7 +746,7 @@ export type LaunchesQuery = (
     & Pick<Launch, 'flight_number' | 'mission_name' | 'launch_success' | 'launch_year' | 'upcoming'>
     & { links?: Maybe<(
       { __typename?: 'LaunchLinks' }
-      & Pick<LaunchLinks, 'flickr_images'>
+      & Pick<LaunchLinks, 'flickr_images' | 'mission_patch_small'>
     )> }
   )>>> }
 );
@@ -761,6 +761,7 @@ export const LaunchesDocument = gql`
     launch_year
     links {
       flickr_images
+      mission_patch_small
     }
     upcoming
   }

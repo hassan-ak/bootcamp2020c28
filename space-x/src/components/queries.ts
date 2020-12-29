@@ -9,6 +9,7 @@ export const QUERY_LAUNCH = gql`
         launch_year
         links{
             flickr_images
+            mission_patch_small
         }
         upcoming
     }

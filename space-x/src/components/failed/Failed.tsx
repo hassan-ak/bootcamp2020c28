@@ -39,8 +39,8 @@ export const Failed = () => {
                                         {launch.mission_name}
                                     </Typography>
                                     <div className="imageDiv">
-                                        {(launch.links?.flickr_images)?.length && launch.links?.flickr_images[1] ?
-                                            <img src={launch.links?.flickr_images[1]} className="cardImage" alt="succeeded" />
+                                        {(launch.links?.mission_patch_small)?.length && launch.links?.mission_patch_small ?
+                                            <img src={launch.links?.mission_patch_small} className="cardImage" alt="succeeded" />
                                             : <img src={noImage} className="cardImage" alt="succeeded" />}
                                     </div>
                                     <div className="cardDetails">
