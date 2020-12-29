@@ -70,6 +70,115 @@ body {
     border-radius: 20px;
 }
 
+/* Loader */
+.loader {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .loader:after {
+    content: " ";
+    display: block;
+    border-radius: 50%;
+    width: 0;
+    height: 0;
+    margin: 8px;
+    box-sizing: border-box;
+    border: 32px solid #fff;
+    border-color: #fff transparent #fff transparent;
+    animation: loader 1.2s infinite;
+  }
+  @keyframes loader {
+    0% {
+      transform: rotate(0);
+      animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+    50% {
+      transform: rotate(900deg);
+      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+    100% {
+      transform: rotate(1800deg);
+    }
+  }
+
+/* Launches */
+.launchesList{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 75vh;
+}
+.slLoading{
+    color: white;
+    text-align: center;
+}
+h3{
+    color: white;
+}
+.slCard{
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+.slCardText{
+    color: white;
+}
+.cardDetails{
+    margin-top: 10px;
+}
+.startButton{
+    background: linear-gradient(45deg, #6b75fe8c 30%, #535eff8a 90%);  
+    width: 100%;
+}
+.cardImage{
+    width: 100px;
+    height: 100px;
+    align-self: center;
+    border-radius: 20px;
+}
+.imageDiv{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ErrorPage */
 .errorPage {
     color: white;
