@@ -5,6 +5,7 @@ import { Failed } from './components/failed/Failed';
 import Footer from './components/footer/Footer';
 import Header from './components/header/Header';
 import { Home } from './components/home/Home';
+import { Launch } from './components/launch/Launch';
 import { Launches } from './components/launches/Launches';
 import { Succeeded } from './components/succeeded/Succeeded';
 import { UpComming} from './components/upComming/upComming';
@@ -18,6 +19,7 @@ function App() {
       <Succeeded/>
       <Failed/>
       <UpComming/>
+      <Launch/>
       <ErrorPage/>
       <Footer/>
     </div>

@@ -10,7 +10,6 @@ body {
     font-family: 'Open Sans', sans-serif;
     margin: 0;
 }
-
 /* Home Page */
 .homeContainer{
     max-height: 100%;
@@ -33,7 +32,6 @@ body {
     text-align: justify;
     text-justify: inter-word;
 }
-
 /* Launches Page */
 .launchesContainer{
     display: flex;
@@ -69,7 +67,6 @@ body {
     align-self: center;
     border-radius: 20px;
 }
-
 /* Loader */
 .loader {
     display: inline-block;
@@ -102,7 +99,6 @@ body {
       transform: rotate(1800deg);
     }
   }
-
 /* Launches */
 .launchesList{
     display: flex;
@@ -144,41 +140,6 @@ h3{
     flex-direction: column;
     width: 100%;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ErrorPage */
 .errorPage {
     color: white;
@@ -204,3 +165,75 @@ h3{
 .errorMsg strong{
     color: green;
 }
+
+
+
+
+
+/* Launch Page */
+.launchPage{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    max-width: 98%;
+    color: white;
+}
+.launchLogo{
+    height: 150px;
+    width: 150px;
+}
+.tableDiv{
+    border: 3px solid white;
+}
+th, td{
+    border: 1px solid white;
+}
+td{
+    padding: 10px;
+}
+.green{
+    color: green;
+}
+.red{
+    color: red;
+}
+.yellow{
+    color: yellow;
+}
+
+.productsGridContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+@media(max-width: 960px){
+    .productsContainer{
+        margin-top: 100px;
+    }
+}
+
+@media(max-width: 960px){
+    .productsContainer{
+        margin-top: 100px;
+    }
+}
+.productsGrid {
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-top: 0pt;
+}
+
+
+
+
+
+
+
+
+
+
