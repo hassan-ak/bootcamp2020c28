@@ -13,6 +13,11 @@ import { Route, Routes } from 'react-router-dom';
 import { LaunchCat } from './components/LaunchCat';
 
 function App() {
+  const [id, setId] = React.useState("1");
+  const handleIdChange = React.useCallback(newId => {
+    setId(newId);
+  }, []);
+  console.log(id)
   return (
     <div>
       <Header/>
@@ -20,13 +25,16 @@ function App() {
         <Route path="/" element={<Home/>} />
         <Route path="launches" element={<Launches/>} />
         <Route path="launches/succeeded" element={<LaunchCat/>}>
-          <Route path="/" element={<Succeeded/>}/>
+          <Route path="/" element={<Succeeded handleIdChange={handleIdChange}/>}/>
+          <Route path={`${id}`} element={<Launch id={id}/>}/>
         </Route>
         <Route path="launches/failed" element={<LaunchCat/>}>
-          <Route path="/" element={<Failed/>}/>
+          <Route path="/" element={<Failed handleIdChange={handleIdChange}/>}/>
+          <Route path={`${id}`} element={<Launch id={id}/>}/>
         </Route>
         <Route path="launches/up-comming" element={<LaunchCat/>}>
-          <Route path="/" element={<UpComming/>}/>
+          <Route path="/" element={<UpComming handleIdChange={handleIdChange}/>}/>
+          <Route path={`${id}`} element={<Launch id={id}/>}/>
         </Route>
         <Route path="*" element={<ErrorPage />} />
       </Routes>

@@ -29,9 +29,15 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export const Launch = () => {
+type Props = {
+    id: string;
+}
+
+export const Launch : React.FC<Props> = ({id})=>{
     const classes = useStyles();
-    const { data, error, loading } = useLaunchInfoQuery({ variables: { id: "14" } });
+    const { data, error, loading } = useLaunchInfoQuery({ variables: { id: `${id}` } });
+    const test = "https://www.youtube.com/watch?v=Od-lON4bTyQ"
+    console.log() 
     if (loading) {
         return (<div className="launchPage">
             <div className="slLoading">
@@ -129,6 +135,9 @@ export const Launch = () => {
                         </Grid>
                     </div>
                 }
+            </div> 
+            <div>
+            {!!data.launch?.links && data.launch.links.video_link && <iframe width="400" height="345" src={data.launch.links.video_link.substring(0, 23) + "/embed/" + data.launch.links.video_link.substring(32, test.length)}></iframe>}
             </div>
         </div>
     )

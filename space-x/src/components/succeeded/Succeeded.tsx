@@ -2,8 +2,13 @@ import { Button, Card, CardContent, Grid, Typography } from '@material-ui/core';
 import React from 'react';
 import { useLaunchesQuery } from '../../generated/graphql';
 import noImage from '../../asserts/images/noImage.png';
+import { Link } from 'react-router-dom';
 
-export const Succeeded = () => {
+type Props = {
+    handleIdChange: any;
+}
+
+export const Succeeded : React.FC<Props> = ({handleIdChange})=>{
     const { data, error, loading } = useLaunchesQuery();
     if (loading) {
         return (<div className="launchesList">
@@ -48,12 +53,15 @@ export const Succeeded = () => {
                                             Flight No. : {launch.flight_number}
                                         </Typography>
                                     </div>
+                                    <Link to={`${launch?.flight_number}`} className=" buttonLink">
                                     <Button
                                         variant="contained"
                                         className="startButton"
+                                        onClick={() => handleIdChange(launch.flight_number)}
                                     >
                                         Details
                                     </Button>
+                                    </Link>
                                 </CardContent>
                             </Grid>
                         )
