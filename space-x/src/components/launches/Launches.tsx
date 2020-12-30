@@ -2,14 +2,27 @@
 // React Imports
 import React from 'react';
 // Material Ui Imports
-import { Card, CardContent, Grid, Typography } from '@material-ui/core';
+import { Button, Card, CardContent, Grid, Typography } from '@material-ui/core';
 // Images Imports
 import succeeded from '../../asserts/images/succeeded.png';
 import failed from '../../asserts/images/failed.png';
 import upComming from '../../asserts/images/upcomming.png';
+import { makeStyles } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom';
+
+const useStyles = makeStyles((theme) => ({
+    startButton: {
+        marginTop:"10px",
+        background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+        textDecoration: "none",
+        width: "100%" 
+    },
+}));
 
 // Products Page
 export const Launches = () => {
+        //  useStyles
+        const classes = useStyles();
     return (
             <div className="launchesContainer">
                 <Grid container className="launchesGrid">
@@ -17,25 +30,40 @@ export const Launches = () => {
                     <Grid item xs={10} md={3} component={Card} className="card succeeded">
                         <CardContent className="launchesCard">
                             <img src={succeeded} className="launchesImage" alt="succeeded" />
-                            <Typography variant="h5" color="textSecondary" align="center" gutterBottom >
+                            <Link to="succeeded" className=" buttonLink">
+                            <Button
+                                variant="contained"
+                                className={classes.startButton}
+                            >
                                 Succeeded
-                                </Typography>
+                            </Button>
+                            </Link>
                         </CardContent>
                     </Grid>
                     <Grid item xs={10} md={3} component={Card} className="card failed">
                         <CardContent className="launchesCard">
                             <img src={failed} className="launchesImage" alt="failed" />
-                            <Typography variant="h5" color="textSecondary" align="center" gutterBottom >
+                            <Link to="failed" className=" buttonLink">
+                            <Button
+                                variant="contained"
+                                className={classes.startButton}
+                            >
                                 Failed
-                                </Typography>
+                            </Button>
+                            </Link>
                         </CardContent>
                     </Grid>
                     <Grid item xs={10} md={3} component={Card} className="card upComming">
                         <CardContent className="launchesCard">
                             <img src={upComming} className="launchesImage" alt="upcomming" />
-                            <Typography variant="h5" color="textSecondary" align="center" gutterBottom >
+                            <Link to="up-comming" className=" buttonLink">
+                            <Button
+                                variant="contained"
+                                className={classes.startButton}
+                            >
                                 Up-Comming
-                                </Typography>
+                            </Button>
+                            </Link>
                         </CardContent>
                     </Grid>
                 </Grid>

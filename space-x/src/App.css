@@ -51,16 +51,16 @@ body {
     align-items: center;
 }
 .launchesCard{
-    background: linear-gradient(45deg, #fe6b8b8c 30%, #ff8f538a 90%);
+    background-color: black;
 }
 .succeeded {
-    border-bottom: 10px solid green;
+    border: 1px solid green;
 }
 .failed {
-    border-bottom: 10px solid red;
+    border: 1px solid red;
 }
 .upComming {
-    border-bottom: 10px solid rgb(255, 255, 255);
+    border: 1px solid rgb(255, 255, 255);
 }
 .launchesImage{
     width: 100%;
@@ -237,3 +237,11 @@ td{
 
 
 
+.link{
+    color: white;
+    text-decoration: none;
+}
+.buttonLink{
+    text-decoration: none;
+    width: 100%;
+}

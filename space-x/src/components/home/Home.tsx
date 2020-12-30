@@ -4,6 +4,7 @@ import { Button, Card, CardContent, Grid, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 // Images Imports
 import home from '../../asserts/images/home.png';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
     mainGrid: {
@@ -20,6 +21,8 @@ const useStyles = makeStyles((theme) => ({
     },
     startButton: {
         background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+        textDecoration: "none",
+        width: "100%" 
     },
 }));
 export const Home = () => {
@@ -42,12 +45,14 @@ export const Home = () => {
                             <Typography variant= "h6" gutterBottom className="homeDetail" >
                                 SpaceX is an American aerospace manufacturer and space transportation services company. It was founded to reduce space transportation costs for colonization of Mars.
                             </Typography>
+                            <Link to="launches" className=" buttonLink">
                             <Button
                                 variant="contained"
                                 className={classes.startButton}
                             >
                                 Launches
                             </Button>
+                            </Link>
                         </CardContent>
                     </Grid>
             </Grid>

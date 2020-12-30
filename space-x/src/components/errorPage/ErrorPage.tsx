@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export const ErrorPage = () => {
     return (
@@ -9,7 +10,7 @@ export const ErrorPage = () => {
                 Got deleted. 
                 Is hiding out in quarantine.
                 Never existed in the first place.
-                <p>Let's go <strong>Home</strong> and try from there.</p>
+                <p>Let's go <Link to ="/" className="link"><strong>Home</strong></Link> and try from there.</p>
             </div>
       </div>
     )

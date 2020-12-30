@@ -10,6 +10,7 @@ import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 // Images Imports
 import logo from '../../asserts/images/logo.png';
+import { Link } from 'react-router-dom';
 
 // Styles Definations for Header
 const useStyles = makeStyles((theme) => ({
@@ -74,33 +75,43 @@ export default function Header() {
                     <Grid container spacing={2}>
                         {/* App Logo */}
                         <Grid item xs={2}>
-                            <IconButton
-                                edge="start"
-                                aria-label="SpaceX">
-                                <img src={logo} alt="logo" />
-                            </IconButton>
+                            <Link to="/" className="">
+                                <IconButton
+                                    edge="start"
+                                    aria-label="SpaceX">
+                                    <img src={logo} alt="logo" />
+                                </IconButton>
+                            </Link>
                         </Grid>
                         {/* Menu Entries */}
                         <Grid item xs={7} className={classes.menu}>
                             <Grid item xs={3}>
-                                <Typography variant="h6" className={classes.menuElement}>
-                                    Launches
-                                </Typography>
+                                <Link to="launches" className="link">
+                                    <Typography variant="h6" className={classes.menuElement}>
+                                        Launches
+                                    </Typography>
+                                </Link>
                             </Grid>
                             <Grid item xs={3}>
+                            <Link to="launches/succeeded" className="link">
                                 <Typography variant="h6" className={classes.menuElement}>
                                     Succeeded
                                 </Typography>
+                            </Link>
                             </Grid>
                             <Grid item xs={3}>
+                            <Link to="launches/failed" className="link">
                                 <Typography variant="h6" className={classes.menuElement}>
                                     Failed
                                 </Typography>
+                            </Link>
                             </Grid>
                             <Grid item xs={3}>
+                            <Link to="launches/up-comming" className="link">
                                 <Typography variant="h6" className={classes.menuElement}>
                                     Up-Comming
                                 </Typography>
+                            </Link>
                             </Grid>
                         </Grid>
                         {/* Menu Bar */}
