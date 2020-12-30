@@ -2,7 +2,7 @@
 // React Imports
 import React from 'react';
 // Material Ui Imports
-import { Button, Card, CardContent, Grid, Typography } from '@material-ui/core';
+import { Button, Card, CardContent, Grid } from '@material-ui/core';
 // Images Imports
 import succeeded from '../../asserts/images/succeeded.png';
 import failed from '../../asserts/images/failed.png';

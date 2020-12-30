@@ -137,7 +137,7 @@ export const Launch : React.FC<Props> = ({id})=>{
                 }
             </div> 
             <div>
-            {!!data.launch?.links && data.launch.links.video_link && <iframe width="400" height="345" src={data.launch.links.video_link.substring(0, 23) + "/embed/" + data.launch.links.video_link.substring(32, test.length)}></iframe>}
+            {!!data.launch?.links && data.launch.links.video_link && <iframe title="launch Video" width="400" height="345" src={data.launch.links.video_link.substring(0, 23) + "/embed/" + data.launch.links.video_link.substring(32, test.length)}></iframe>}
             </div>
         </div>
     )
