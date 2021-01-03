@@ -1,7 +1,6 @@
 import React from 'react';
-import {useSelector} from 'react-redux';
-
-type ProductItem = {
+import { useSelector } from "react-redux"
+interface ProductItem {
     id: number
     name: string
     brand: string
@@ -17,10 +16,9 @@ type ProductItem = {
 
 export const Gents = () => {
     const products = useSelector((state: ProductItem[]) => state)
-    console.log(products)
+    products.map((product)=>console.log(product))
     return (
         <div>
-            
         </div>
     )
 }
