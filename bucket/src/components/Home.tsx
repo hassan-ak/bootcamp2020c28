@@ -4,6 +4,7 @@ import { Button, Card, CardContent, Grid, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 // Images Imports
 import home from '../asserts/images/home.png';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
     mainGrid: {
@@ -43,12 +44,14 @@ export const Home = () => {
                             <Typography variant= "h6" gutterBottom className="homeDetail" >
                                 Finest Shoes you can find online.
                             </Typography>
-                            <Button
-                                variant="contained"
-                                className={classes.startButton}
-                            >
-                                Store
-                            </Button>
+                            <Link to="store" className="homeLink">
+                                <Button
+                                    variant="contained"
+                                    className={classes.startButton}
+                                >
+                                    Store
+                                </Button>
+                            </Link>
                         </CardContent>
                     </Grid>
             </Grid>

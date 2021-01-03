@@ -1,4 +1,4 @@
-import { Button, Card, CardContent, Grid, Typography } from '@material-ui/core';
+import { Button, Card, CardContent, Grid } from '@material-ui/core';
 import React from 'react';
 import { useSelector } from "react-redux"
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';

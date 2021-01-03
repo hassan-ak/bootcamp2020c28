@@ -336,3 +336,13 @@ body {
     height: 300px;
   }
 }
+
+.homeLink{
+  text-decoration: none;
+  color: white;
+}
+
+.goLink{
+  text-decoration: none;
+
+}

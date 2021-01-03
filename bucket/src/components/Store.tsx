@@ -5,9 +5,9 @@ import React from 'react';
 import { Button, Card, CardContent, Grid } from '@material-ui/core';
 // Images Imports
 import { makeStyles } from '@material-ui/core/styles';
-
 import gents from '../asserts/images/gents.png';
 import ladies from '../asserts/images/ladies.png';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
     gentsButton: {
@@ -35,23 +35,27 @@ export const Store = () => {
                 <Grid item xs={10} md={3} component={Card} className="storeCard">
                     <CardContent className="sCard">
                         <img src={gents} className="storeImage" alt="failed" />
-                        <Button
-                            variant="contained"
-                            className={classes.gentsButton}
-                        >
-                            Gents
+                        <Link to="gents" className="homeLink">
+                            <Button
+                                variant="contained"
+                                className={classes.gentsButton}
+                            >
+                                Gents
                             </Button>
+                        </Link>
                     </CardContent>
                 </Grid>
                 <Grid item xs={10} md={3} component={Card} className="storeCard">
                     <CardContent className="sCard">
                         <img src={ladies} className="storeImage" alt="upcomming" />
-                        <Button
-                            variant="contained"
-                            className={classes.ladiesButton}
-                        >
-                            Ladies
+                        <Link to="ladies" className="homeLink">
+                            <Button
+                                variant="contained"
+                                className={classes.ladiesButton}
+                            >
+                                Ladies
                             </Button>
+                        </Link>
                     </CardContent>
                 </Grid>
             </Grid>

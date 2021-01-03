@@ -9,6 +9,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import { Link } from 'react-router-dom';
 // Images Imports
 import logo from '../asserts/images/logo.png';
 
@@ -16,7 +17,7 @@ import logo from '../asserts/images/logo.png';
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
-        marginBottom:"10px"
+        marginBottom: "10px"
     },
     headerBackground: {
         backgroundColor: '#1D2521',
@@ -81,39 +82,51 @@ export default function Header() {
                     <Grid container spacing={2}>
                         {/* App Logo */}
                         <Grid item xs={2}>
+                            <Link to="/" className="homeLink">
                                 <IconButton
                                     edge="start"
                                     aria-label="Shoe Store">
-                                    <img src={logo} alt="logo" className="headerImage"/>
+                                    <img src={logo} alt="logo" className="headerImage" />
                                 </IconButton>
+                            </Link>
                         </Grid>
                         {/* Menu Entries */}
                         <Grid item xs={7} className={classes.menu}>
                             <Grid item xs={3}>
+                                <Link to="/" className="homeLink">
                                     <Typography variant="h6" className={classes.menuElement}>
                                         Home
                                     </Typography>
+                                </Link>
                             </Grid>
                             <Grid item xs={3}>
-                                <Typography variant="h6" className={classes.menuElement}>
-                                    About
-                                </Typography>
+                                <Link to="about" className="homeLink">
+                                    <Typography variant="h6" className={classes.menuElement}>
+                                        About
+                                    </Typography>
+                                </Link>
                             </Grid>
                             <Grid item xs={3}>
-                                <Typography variant="h6" className={classes.menuElement}>
-                                    Store
-                                </Typography>
+                            <Link to="store" className="homeLink">
+                                    <Typography variant="h6" className={classes.menuElement}>
+                                        Store
+                                    </Typography>
+                                </Link>
                             </Grid>
                             <Grid item xs={3}>
-                                <Typography variant="h6" className={classes.menuElement}>
-                                    Contact us
-                                </Typography>
+                                <Link to="contact" className="homeLink">
+                                    <Typography variant="h6" className={classes.menuElement}>
+                                        Contact us
+                                    </Typography>
+                                </Link>
                             </Grid>
                             <Grid item xs={2}>
-                                <IconButton edge="end" className={classes.cartIcon}>
-                                    <ShoppingCartIcon />
-                                </IconButton>
-                        </Grid>
+                                <Link to="cart" className="homeLink">
+                                    <IconButton edge="end" className={classes.cartIcon}>
+                                        <ShoppingCartIcon />
+                                    </IconButton>
+                                </Link>
+                            </Grid>
                         </Grid>
                         {/* Menu Bar */}
                         <Grid item xs={2} className={classes.menuButton}>
@@ -133,10 +146,18 @@ export default function Header() {
                                 onClose={handleClose}
                                 classes={{ paper: classes.menuPaper }}
                             >
-                                <MenuItem onClick={handleClose} className={classes.menuList}>Home</MenuItem>
-                                <MenuItem onClick={handleClose} className={classes.menuList}>About</MenuItem>
-                                <MenuItem onClick={handleClose} className={classes.menuList}>Store</MenuItem>
-                                <MenuItem onClick={handleClose} className={classes.menuList}>Contact us</MenuItem>
+                                <Link to="home" className="homeLink">
+                                    <MenuItem onClick={handleClose} className={classes.menuList}>Home</MenuItem>
+                                </Link>
+                                <Link to="about" className="homeLink">
+                                    <MenuItem onClick={handleClose} className={classes.menuList}>About</MenuItem>
+                                </Link>
+                                <Link to="store" className="homeLink">
+                                    <MenuItem onClick={handleClose} className={classes.menuList}>Store</MenuItem>
+                                </Link>
+                                <Link to="contact" className="homeLink">
+                                    <MenuItem onClick={handleClose} className={classes.menuList}>Contact us</MenuItem>
+                                </Link>
                             </Menu>
                         </Grid>
                     </Grid>
