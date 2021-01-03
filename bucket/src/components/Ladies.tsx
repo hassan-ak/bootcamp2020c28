@@ -23,7 +23,7 @@ interface ProductItem {
 
 const useStyles = makeStyles((theme) => ({
     gentsButton: {
-        background: 'linear-gradient(45deg, #53ff7e 30%, #6d6bfe 90%)',
+        background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
         textDecoration: "none",
     },
     cartButton: {
@@ -33,17 +33,17 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export const Gents = () => {
+export const Ladies = () => {
     //  useStyles
     const classes = useStyles();
     const products = useSelector((state: ProductItem[]) => state)
     return (
         <div className="storeContainer">
-            <h2 className="productsHeading">Gents</h2>
+            <h2 className="productsHeading">Ladies</h2>
             <Grid container className="storeGrid">
                 {products.map(
-                    (product, i) => product.gender === "MEN" && (
-                        <Grid key={i} item xs={10} md={3} component={Card} className="storeCard productsCard">
+                    (product, i) => product.gender === "WOMEN" && (
+                        <Grid key={i} item xs={10} md={3} component={Card} className="storeCard productsCardL">
                             <CardContent className="sCard">
                                 <p className="productsName"><strong>{product.name}</strong></p>
                                 <div className="pIDiv">

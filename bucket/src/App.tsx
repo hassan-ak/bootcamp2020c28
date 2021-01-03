@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import { Gents } from './components/Gents';
 import Header from './components/Header';
 import { Home } from './components/Home';
+import { Ladies } from './components/Ladies';
 import { Store } from './components/Store'
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <About/>
         <Store/>
         <Gents/>
+        <Ladies/>
         <ErrorPage/>
       </div>
       <Footer/>
