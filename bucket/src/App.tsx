@@ -12,6 +12,7 @@ import { Cart } from './components/Cart';
 import { ErrorPage } from './components/ErrorPage';
 import Footer from './components/Footer';
 import './App.css';
+import { SelectedProduct } from './components/SelectedProduct';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="store" element={<Store />} />
           <Route path="store/gents" element={<ProductsCatagory />}>
             <Route path="/" element={<Gents />} />
+            <Route path=":slug" element={<SelectedProduct/>}></Route>
           </Route>
           <Route path="store/ladies" element={<ProductsCatagory />}>
             <Route path="/" element={<Ladies />} />

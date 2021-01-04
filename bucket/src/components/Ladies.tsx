@@ -4,6 +4,7 @@ import { useSelector } from "react-redux"
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 // Images Imports
 import { makeStyles } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom';
 
 
 
@@ -51,12 +52,14 @@ export const Ladies = () => {
                                 </div>
                                 <p className="productsPrice"><strong>${product.price}</strong></p>
                                 <div className="productButtons">
+                                <Link to={`/store/gents/${product.slug}`} className="homeLink">
                                     <Button
                                         variant="contained"
                                         className={classes.gentsButton}
                                     >
                                         Details
                                     </Button>
+                                </Link>
                                     <Button
                                         variant="contained"
                                         className={classes.cartButton}

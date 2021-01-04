@@ -49,6 +49,13 @@ body {
 .title{
     color: #298155;
 }
+.slButtonsDiv{
+  display: flex;
+  justify-content: space-evenly;
+}
+.pc{
+  margin-top: 20px;
+}
 
 /* Footer */
 .footerCopy{
@@ -344,5 +351,17 @@ body {
 
 .goLink{
   text-decoration: none;
+}
 
+/* Selected Product */
+.slName{
+  color: #298155;
+  font-size: bold large;
+}
+.slImage{
+  height: 50%;
+  border-radius: 50px;
+}
+.brand{
+  color: white;
 }
