@@ -164,7 +164,7 @@ const InitialState: ProductItem[] = [
     gender: "MEN",
     category: "Running",
     price: 160,
-    is_in_inventory: false,
+    is_in_inventory: true,
     items_left: 3,
     imageURL: "https://static.Nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/i1-665455a5-45de-40fb-945f-c1852b82400d/react-infinity-run-flyknit-mens-running-shoe-zX42Nc.jpg",
     slug: "react-infinity-run-flyknit",

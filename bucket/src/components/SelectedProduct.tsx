@@ -5,6 +5,8 @@ import { useSelector } from "react-redux"
 import { useParams } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import { store } from "../store/store";
+import { add } from "../store/productsSlice";
 
 interface ProductItem {
     id: number
@@ -82,7 +84,13 @@ export const SelectedProduct = () => {
                             </div>
                             <div className="slButtonsDiv pc">
                                 <Button variant="contained" className={classes.startButton}>$ {product?.price}</Button>
-                                <Button variant="contained" className={classes.startButton}><ShoppingCartIcon/></Button>
+                                <Button variant="contained" 
+                                    className={classes.startButton}
+                                    disabled={product?.added}
+                                    onClick={() => store.dispatch(add(product))}
+                                >
+                                    <ShoppingCartIcon/>
+                                </Button>
                             </div>                                
                         </CardContent>
                     </Grid>

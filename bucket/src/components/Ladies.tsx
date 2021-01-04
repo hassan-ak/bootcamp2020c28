@@ -5,8 +5,8 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 // Images Imports
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
-
-
+import { store } from "../store/store";
+import { add } from "../store/productsSlice";
 
 interface ProductItem {
     id: number
@@ -61,9 +61,11 @@ export const Ladies = () => {
                                     </Button>
                                 </Link>
                                     <Button
+                                        key={product.id}
                                         variant="contained"
                                         className={classes.cartButton}
-                                        
+                                        disabled={product.added}
+                                        onClick={() => store.dispatch(add(product))}
                                     >
                                         <ShoppingCartIcon/>
                                     </Button>
