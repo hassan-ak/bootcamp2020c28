@@ -7,6 +7,8 @@ import Typography from '@material-ui/core/Typography';
 import { useSelector } from "react-redux";
 import Paper from '@material-ui/core/Paper';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
+import { store } from "../store/store";
+import { remove, removeAll } from "../store/productsSlice";
 
 // Stylig for cart page
 const useStyles = makeStyles((theme) => ({
@@ -130,6 +132,7 @@ export const Cart = () => {
                                                     key={p.id}
                                                     variant="contained"
                                                     className={classes.cartButton}
+                                                    onClick={() => store.dispatch(remove(p))}
                                                 >
                                                     <DeleteForeverIcon />
                                                 </Button>
@@ -174,6 +177,7 @@ export const Cart = () => {
                                 variant="contained"
                                 color="secondary"
                                 fullWidth
+                                onClick={() => store.dispatch(removeAll())}
                             >
                                 Checkout
                             </Button>

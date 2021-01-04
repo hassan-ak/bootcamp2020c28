@@ -18,18 +18,26 @@ export const productsSlice = createSlice({
       })
     },
     remove: (state, action) => {
-            return state.map(item => {
-              if (item.id !== action.payload.id) {
-                return item
-              }
-      
-              return {
-                ...item,
-                added: false       
-              }
-            })
-          }
+      return state.map(item => {
+        if (item.id !== action.payload.id) {
+          return item
+        }
+
+        return {
+          ...item,
+          added: false
+        }
+      })
+    },
+    removeAll: (state) => {
+      return state.map(item => {
+        return {
+          ...item,
+          added: false
+        }
+      })
+    },
   }
 });
 
-export const { add } = productsSlice.actions;
+export const { add, remove, removeAll } = productsSlice.actions;
