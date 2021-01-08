@@ -8,25 +8,15 @@ import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
 // Types Defination
 type Props = {
     submit: any;
+    setFormValues: any;
+    prevValues:any;
 };
 
-interface FormValues {
-    name: String;
-    fName: String;
-    gender: String;
-}
-
-const initialValues: FormValues = {
-    name: '',
-    fName: '',
-    gender: '',
-}
-
-export const PersonalInformation: React.FC<Props> = ({ submit}) => {
+export const PersonalInformation: React.FC<Props> = ({ submit, setFormValues,prevValues }) => {
     return (
         <div>
             <Formik
-                initialValues={initialValues}
+                initialValues={prevValues}
                 validationSchema={Yup.object({
                     name: Yup.string()
                         .min(3, 'Must be 3 characters or more')
@@ -34,15 +24,12 @@ export const PersonalInformation: React.FC<Props> = ({ submit}) => {
                     fName: Yup.string()
                         .min(3, 'Must be 3 characters or more')
                         .required('Father Name is required'),
-                    gender: Yup.string()
-                        .required('Required'),
                 })}
                 onSubmit={(values) => {
                     submit(1)
+                    setFormValues({...values,...prevValues})
                 }}
             >
-                {({ dirty, isValid }) => {
-                    return (
                         < Form className="formControl">
                             <div className="fieldsDiv">
                                 <Field
@@ -85,15 +72,12 @@ export const PersonalInformation: React.FC<Props> = ({ submit}) => {
                                     variant="contained"
                                     className="buttonN"
                                     type="submit"
-                                    disabled={!dirty || !isValid}
                                     endIcon={<KeyboardArrowRightIcon />}
                                 >
                                     Next
                                 </Button>
                             </div>
                         </Form>
-                    )
-                }}
             </Formik>
         </div >
     )

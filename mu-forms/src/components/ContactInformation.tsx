@@ -9,29 +9,15 @@ import KeyboardArrowRigthIcon from '@material-ui/icons/KeyboardArrowRight';
 // Types Defination
 type Props = {
     submit: any;
+    setFormValues: any;
+    prevValues:any;
 };
 
-interface FormValues {
-    email: String;
-    country: String;
-    province: String;
-    city: String;
-    address: String;
-}
-
-const initialValues: FormValues = {
-    email:'',
-    country:'',
-    province:'',
-    city:'',
-    address:'',
-}
-
-export const ContactInformation : React.FC<Props> = ({ submit}) => {
+export const ContactInformation : React.FC<Props> = ({ submit, setFormValues,prevValues }) => {
     return (
         <div>
             <Formik
-                initialValues={initialValues}
+                initialValues={prevValues}
                 validationSchema={Yup.object({
                     email: Yup.string()
                         .email("Invalid Email address")
@@ -55,10 +41,9 @@ export const ContactInformation : React.FC<Props> = ({ submit}) => {
                 })}
                 onSubmit={(values) => {
                     submit(2)
+                    setFormValues({...values,...prevValues})
                 }}
             >
-                {({ dirty, isValid }) => {
-                    return (
                         < Form className="formControl">
                             <div className="fieldsDiv">
                                 <Field
@@ -120,7 +105,6 @@ export const ContactInformation : React.FC<Props> = ({ submit}) => {
                                     variant="contained"
                                     className="buttonP"
                                     onClick={()=>{submit(0)}}
-                                    disabled={!dirty || !isValid}
                                     startIcon={<KeyboardArrowLeftIcon />}
                                 >
                                     Back
@@ -129,15 +113,12 @@ export const ContactInformation : React.FC<Props> = ({ submit}) => {
                                     variant="contained"
                                     className="buttonP"
                                     type="submit"
-                                    disabled={!dirty || !isValid}
                                     endIcon={<KeyboardArrowRigthIcon />}
                                 >
                                     Preview
                                 </Button>
                             </div>
                         </Form>
-                    )
-                }}
             </Formik>
         </div >
     )

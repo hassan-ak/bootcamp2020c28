@@ -6,38 +6,13 @@ import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
 import Check from '@material-ui/icons/Check';
-import SettingsIcon from '@material-ui/icons/Settings';
 import ContactMailIcon from '@material-ui/icons/ContactMail';
-import VideoLabelIcon from '@material-ui/icons/VideoLabel';
 import StepConnector from '@material-ui/core/StepConnector';
 import { PersonalInformation } from '../components/PersonalInformation';
 import { ContactInformation } from '../components/ContactInformation';
 import { SubmitForm } from '../components/SubmitForm';
 import PublishIcon from '@material-ui/icons/Publish';
 import PersonIcon from '@material-ui/icons/Person';
-
-const QontoConnector = withStyles({
-    alternativeLabel: {
-        top: 10,
-        left: 'calc(-50% + 16px)',
-        right: 'calc(50% + 16px)',
-    },
-    active: {
-        '& $line': {
-            borderColor: '#784af4',
-        },
-    },
-    completed: {
-        '& $line': {
-            borderColor: '#784af4',
-        },
-    },
-    line: {
-        borderColor: '#eaeaf0',
-        borderTopWidth: 3,
-        borderRadius: 1,
-    },
-})(StepConnector);
 
 const useQontoStepIconStyles = makeStyles({
     root: {
@@ -173,6 +148,28 @@ ColorlibStepIcon.propTypes = {
     icon: PropTypes.node,
 };
 
+interface FormValues {
+    name: String;
+    fName: String;
+    gender: String;
+    email: String;
+    country: String;
+    province: String;
+    city: String;
+    address: String;
+}
+
+const initialValues: FormValues = {
+    name: '',
+    fName: '',
+    gender: '',
+    email:'',
+    country:'',
+    province:'',
+    city:'',
+    address:'',
+}
+
 
 
 
@@ -186,20 +183,22 @@ ColorlibStepIcon.propTypes = {
 function getSteps() {
     return ['Personal Information', 'Contact Information', 'Submit'];
 }
-function getStepContent(step: Number, setStep:any) {
+function getStepContent(step: Number, setStep:any, formValues:any, setFormValues:any) {
     switch (step) {
         case 0:
-            return <PersonalInformation submit={setStep}/>;
+            return <PersonalInformation submit={setStep} prevValues={formValues} setFormValues={setFormValues}/>;
         case 1:
-            return <ContactInformation submit={setStep}/>;
+            return <ContactInformation submit={setStep} prevValues={formValues} setFormValues={setFormValues}/>;
         case 2:
-            return <SubmitForm submit={setStep}/>;
+            return <SubmitForm submit={setStep} prevValues={formValues} setFormValues={setFormValues} zValues={initialValues}/>;
         default:
             return 'Some Error Happened, Start Again';
     }
 }
 export default function CustomizedSteppers() {
     const [activeStep, setActiveStep] = React.useState(0);
+    const [formValues, setFormValues] = React.useState({})
+    console.log(formValues)
     const steps = getSteps();
     return (
         <div className="steperContainer">
@@ -210,7 +209,7 @@ export default function CustomizedSteppers() {
                     </Step>
                 ))}
             </Stepper>
-            {getStepContent(activeStep,setActiveStep)}
+            {getStepContent(activeStep,setActiveStep,formValues,setFormValues)}
         </div>
     );
 }
