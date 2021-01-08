@@ -6,6 +6,11 @@ import { Button } from '@material-ui/core';
 import KeyboardArrowLeftIcon from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRigthIcon from '@material-ui/icons/KeyboardArrowRight';
 
+// Types Defination
+type Props = {
+    submit: any;
+};
+
 interface FormValues {
     email: String;
     country: String;
@@ -22,7 +27,7 @@ const initialValues: FormValues = {
     address:'',
 }
 
-export const ContactInformation = () => {
+export const ContactInformation : React.FC<Props> = ({ submit}) => {
     return (
         <div>
             <Formik
@@ -49,6 +54,7 @@ export const ContactInformation = () => {
                         .required('Address is required')
                 })}
                 onSubmit={(values) => {
+                    submit(2)
                 }}
             >
                 {({ dirty, isValid }) => {
@@ -113,7 +119,7 @@ export const ContactInformation = () => {
                                 <Button
                                     variant="contained"
                                     className="buttonP"
-                                    type="submit"
+                                    onClick={()=>{submit(0)}}
                                     disabled={!dirty || !isValid}
                                     startIcon={<KeyboardArrowLeftIcon />}
                                 >

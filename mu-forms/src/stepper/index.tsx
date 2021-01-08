@@ -186,20 +186,20 @@ ColorlibStepIcon.propTypes = {
 function getSteps() {
     return ['Personal Information', 'Contact Information', 'Submit'];
 }
-function getStepContent(step: any) {
+function getStepContent(step: Number, setStep:any) {
     switch (step) {
         case 0:
-            return <PersonalInformation/>;
+            return <PersonalInformation submit={setStep}/>;
         case 1:
-            return <ContactInformation/>;
+            return <ContactInformation submit={setStep}/>;
         case 2:
-            return <SubmitForm/>;
+            return <SubmitForm submit={setStep}/>;
         default:
             return 'Some Error Happened, Start Again';
     }
 }
 export default function CustomizedSteppers() {
-    const [activeStep, setActiveStep] = React.useState(2);
+    const [activeStep, setActiveStep] = React.useState(0);
     const steps = getSteps();
     return (
         <div className="steperContainer">
@@ -210,7 +210,7 @@ export default function CustomizedSteppers() {
                     </Step>
                 ))}
             </Stepper>
-            {getStepContent(activeStep)}
+            {getStepContent(activeStep,setActiveStep)}
         </div>
     );
 }

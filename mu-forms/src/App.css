@@ -10,7 +10,6 @@
 }
 body{
     background-color: #1D2521;
-    color: white;
     font-family: 'Playfair Display', serif;
 }
 .container{
@@ -24,6 +23,7 @@ body{
 
 h1{
     text-align: center;
+    color: white;
 }
 
 .steperContainer{

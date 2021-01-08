@@ -6,6 +6,11 @@ import { Button } from '@material-ui/core';
 import KeyboardArrowLeftIcon from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRigthIcon from '@material-ui/icons/KeyboardArrowRight';
 
+// Types Defination
+type Props = {
+    submit: any;
+};
+
 interface FormValues {
     name: String;
     fName: String;
@@ -18,22 +23,23 @@ interface FormValues {
 }
 
 const initialValues: FormValues = {
-    name: 'Hassan Ali Khan',
-    fName: 'Zaheer Ahmad Khan',
-    gender: 'Male',
-    email: 'h.a.khan1992@gmail.com',
-    country: 'Pakistan',
-    province: 'Punjab',
-    city: 'Lahore',
-    address: 'Shershah Colony Raiwind Road',
+    name: 'NAME',
+    fName: 'F NAME',
+    gender: 'GENDER',
+    email: 'EMAIL',
+    country: 'PAKISTAN',
+    province: 'PROVINCE',
+    city: 'LAHORE',
+    address: 'ADDRESS',
 }
 
-export const SubmitForm = () => {
+export const SubmitForm : React.FC<Props> = ({ submit}) => {
     return (
         <div>
             <Formik
                 initialValues={initialValues}
                 onSubmit={(values) => {
+                    submit(0)
                 }}
             >
                 < Form className="formControl">
@@ -59,7 +65,7 @@ export const SubmitForm = () => {
                         <Button
                             variant="contained"
                             className="buttonP"
-                            type="submit"
+                            onClick={()=>{submit(0)}}
                             startIcon={<KeyboardArrowLeftIcon />}
                         >
                             Edit

@@ -5,6 +5,11 @@ import { TextField } from '@material-ui/core';
 import { Button } from '@material-ui/core';
 import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
 
+// Types Defination
+type Props = {
+    submit: any;
+};
+
 interface FormValues {
     name: String;
     fName: String;
@@ -17,7 +22,7 @@ const initialValues: FormValues = {
     gender: '',
 }
 
-export const PersonalInformation = () => {
+export const PersonalInformation: React.FC<Props> = ({ submit}) => {
     return (
         <div>
             <Formik
@@ -33,6 +38,7 @@ export const PersonalInformation = () => {
                         .required('Required'),
                 })}
                 onSubmit={(values) => {
+                    submit(1)
                 }}
             >
                 {({ dirty, isValid }) => {
@@ -46,7 +52,7 @@ export const PersonalInformation = () => {
                                     required
                                     name="name"
                                     label="Full Name"
-                                    helperText={<ErrorMessage name="name">{msg => <div className="error">{msg}</div>}</ErrorMessage>}
+                                    helperText={<ErrorMessage name="name">{msg => <span className="error">{msg}</span>}</ErrorMessage>}
                                 />
                             </div>
                             <div className="fieldsDiv">
@@ -57,7 +63,7 @@ export const PersonalInformation = () => {
                                     required
                                     name="fName"
                                     label="Father Name"
-                                    helperText={<ErrorMessage name="fName">{msg => <div className="error">{msg}</div>}</ErrorMessage>}
+                                    helperText={<ErrorMessage name="fName">{msg => <span className="error">{msg}</span>}</ErrorMessage>}
                                 />
                             </div>
 
