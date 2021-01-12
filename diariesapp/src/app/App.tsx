@@ -2,6 +2,7 @@ import React, { FC, lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { RootState } from '../rootReducer';
+import './App.css'
 
 const Auth = lazy(() => import('../features/auth/Auth'));
 const Home = lazy(() => import('../features/home/Home'));
