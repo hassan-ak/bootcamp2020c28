@@ -1,0 +1,30 @@
+.right {
+    top: auto;
+    bottom: 0;
+    box-shadow: none;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.center {
+    top: auto;
+    bottom: 0;
+    box-shadow: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.left {
+    top: auto;
+    bottom: 0;
+    box-shadow: none;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.grow{
+    flex-grow: 1;
+}
+.title{
+    color: white;
+}
