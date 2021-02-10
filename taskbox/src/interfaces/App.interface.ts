@@ -31,3 +31,7 @@ export interface TasksEProps {
     pinned : boolean;
     id:number;
 }
+
+export interface TasksWindowProps {
+    varient: string;
+}
