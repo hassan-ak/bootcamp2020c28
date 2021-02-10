@@ -24,3 +24,10 @@ export interface AddTaskProps {
 export interface TaskProps {
     task: string;
 }
+
+export interface TasksEProps {
+    contnet: string;
+    archieved: boolean;
+    pinned : boolean;
+    id:number;
+}
