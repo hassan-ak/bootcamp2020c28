@@ -16,3 +16,11 @@ export interface TaskItem {
 export interface InitialStateT {
     TasksList: TaskItem[],
 }
+
+export interface AddTaskProps {
+    varient: string;
+}
+
+export interface TaskProps {
+    task: string;
+}
