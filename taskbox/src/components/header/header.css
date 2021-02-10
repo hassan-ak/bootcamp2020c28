@@ -1,0 +1,14 @@
+.transparent{
+    background-color:  rgb(80, 121, 85);
+    border: none;
+}
+.colored{
+    background-color: tomato;
+}
+.logoImg{
+    width: 35px;
+}
+.root{
+    flex-grow: 1;
+    margin-bottom: 10px;
+}
