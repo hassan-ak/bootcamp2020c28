@@ -3,7 +3,7 @@
 Practice Project
 * Bootcamp 2020 Project 9B: Building Diaries App using React and Redux Toolkit with TypeScript
 
-Shoping Basket app using
+Diaries app using
 * React
 * TypeScript
 * Redux Toolkit
