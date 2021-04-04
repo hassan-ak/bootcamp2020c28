@@ -58,3 +58,15 @@ External Links
 * [Working With React, Formik and Yup](https://webomnizz.com/working-with-react-formik-and-yup/)
 * [React Multi-Step Form Tutorial: Using Formik, Yup and material-ui](https://www.youtube.com/watch?v=l3NEC4McW3g&ab_channel=BrunoAntunes)
 ---
+Practice Project
+* Bootcamp Project 11: Build a Taskbox React Component in TypeScript using Storybook and Publishing it on Bit
+
+Taskbox app using
+* React
+* TypeScript
+* StoryBook
+* Published on Bit
+
+External Links
+* [Taskbox with Storybook for React tutorial](https://storybook.js.org/tutorials/intro-to-storybook/react/en/get-started/)
+
