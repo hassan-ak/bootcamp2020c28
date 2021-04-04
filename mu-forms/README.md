@@ -3,7 +3,7 @@
 Practice Project
 * Bootcamp Project 10: Build a Signup Form and Multi-Step Form with Formik, Yup, and Material UI using TypeScript
 
-Shoping Basket app using
+MultiStep Form using
 * React
 * TypeScript
 * Formik
